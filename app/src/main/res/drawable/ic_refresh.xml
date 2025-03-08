@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Estado cuando el botón está presionado -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/blue"/> <!-- Color al presionar -->
+            <corners android:radius="50dp"/> <!-- Bordes redondeados -->
+        </shape>
+    </item>
+
+    <!-- Estado normal del botón -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/blue"/> <!-- Se cambia a color 'card' -->
+            <corners android:radius="50dp"/> <!-- Bordes redondeados -->
+            <stroke android:width="2dp" android:color="@color/blue"/> <!-- Borde azul -->
+        </shape>
+    </item>
+</selector>

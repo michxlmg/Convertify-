@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Convertify$</string>
+    <string name="app_description">¡Convierta monedas de manera fácil y eficiente con Convertify$!</string>
+    <string name="start_button">Empezar</string>
+    <string name="app_logo_desc">Logo de Convertify</string>
+    <string name="ingrese_cantidad">Ingrese Cantidad</string>
+    <string name="text_convert1">Convertidor de moneda</string>
+    <string name="convertir">Convertir</string>
+    <string name="actualizartasas">Actualizar tasas</string>
+</resources>
