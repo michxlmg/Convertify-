@@ -25,16 +25,12 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Buscar el botón en el layout
+        // Botón para ir a ConvertActivity
         Button btnStart = findViewById(R.id.btnStart);
-
-        // Agregar evento click para cambiar de pantalla
-        btnStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, com.rysoluciones.convertkatsu.ConvertActivity.class);
-                startActivity(intent);
-            }
+        btnStart.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ConvertActivity.class);
+            startActivity(intent);
         });
+
     }
 }

@@ -16,21 +16,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="64dp"
         android:text="Convertidor de moneda"
         android:textColor="@android:color/black"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iconCurrency"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_refreshh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/appName"
+        app:layout_constraintBottom_toBottomOf="@id/appName" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:padding="20dp"
-        app:cardCornerRadius="0dp"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +46,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -47,22 +55,36 @@
                 android:text="Seleccione moneda base:"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:backgroundTint="@color/primary"
                 android:textColor="@android:color/black"
                 android:forceDarkAllowed="false"
-                android:layout_marginBottom="6dp"/>
+                android:layout_marginBottom="8dp"/>
 
-            <TextView
-                android:id="@+id/textViewFrom"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@android:drawable/editbox_background_normal"
-                android:padding="12dp"
-                android:text="USD"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:gravity="center_vertical"
-                android:elevation="3dp"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_money_from"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/textViewFrom"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@android:drawable/editbox_background_normal"
+                    android:padding="12dp"
+                    android:text="USD"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="8dp"
+                    android:drawableEnd="@drawable/ic_dropdown"
+                    android:elevation="3dp"/>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -70,57 +92,88 @@
                 android:text="Seleccione moneda de cambio:"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:backgroundTint="@color/primary"
                 android:textColor="@android:color/black"
                 android:forceDarkAllowed="false"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="6dp"/>
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"/>
 
-            <TextView
-                android:id="@+id/textViewTo"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@android:drawable/editbox_background_normal"
-                android:padding="12dp"
-                android:text="EUR"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:gravity="center_vertical"
-                android:elevation="3dp"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_money_to"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/textViewTo"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@android:drawable/editbox_background_normal"
+                    android:padding="12dp"
+                    android:text="EUR"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="8dp"
+                    android:drawableEnd="@drawable/ic_dropdown"
+                    android:elevation="3dp"/>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/primary"
                 android:text="Ingrese cantidad:"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
                 android:forceDarkAllowed="false"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="6dp"/>
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"/>
 
-            <EditText
-                android:id="@+id/editTextAmount"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@android:drawable/editbox_background_normal"
-                android:hint="Ej. 100"
-                android:padding="10dp"
-                android:textSize="18sp"
-                android:inputType="numberDecimal"
-                android:elevation="3dp"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_amount"
+                    android:layout_marginEnd="8dp"/>
+
+                <EditText
+                    android:id="@+id/editTextAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@android:drawable/editbox_background_normal"
+                    android:hint="Ej. 100"
+                    android:padding="10dp"
+                    android:textSize="18sp"
+                    android:inputType="numberDecimal"
+                    android:elevation="3dp"/>
+            </LinearLayout>
             <Button
-                android:id="@+id/btnConvert"
+                android:id="@+id/btnClear"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
-                android:backgroundTint="@color/blue"
-                android:text="Convertir"
+                android:backgroundTint="#0049ff"
+                android:text="Limpiar"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                app:cornerRadius="0dp" />
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:drawablePadding="8dp"
+                app:cornerRadius="8dp" />
+
+
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -129,8 +182,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:padding="20dp"
-        app:cardCornerRadius="0dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="4dp"
         app:layout_constraintTop_toBottomOf="@id/cardContainer"
         app:layout_constraintStart_toStartOf="parent"
@@ -140,46 +192,92 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:backgroundTint="@color/primary"
-            android:forceDarkAllowed="false"
+            android:padding="16dp"
             android:gravity="center_horizontal">
-
 
             <TextView
                 android:id="@+id/resultText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/primary"
-
                 android:text="Resultado"
-                android:forceDarkAllowed="false"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginBottom="4dp"/>
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/exchangeRateText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tasa de cambio: 0.9262"
-                android:forceDarkAllowed="false"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#0049ff"
+        android:text="Guardar conversión"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:drawableStart="@drawable/ic_convert"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:drawablePadding="8dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resultCard" />
+
 
     <Button
         android:id="@+id/btnUpdateRates"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/blue"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#0049ff"
         android:text="Actualizar tasas"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
-        app:cornerRadius="0dp"
+        android:drawableStart="@drawable/ic_refreshh"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:drawablePadding="8dp"
+        app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/resultCard" />
+        app:layout_constraintTop_toBottomOf="@id/btnConvert" />
+
+
+    <Button
+        android:id="@+id/btnHistory"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#0049ff"
+        android:text="Ver Historial"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:drawableStart="@drawable/ic_history"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:drawablePadding="8dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintTop_toBottomOf="@id/btnUpdateRates"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

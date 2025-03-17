@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Monto y divisa origen -->
+        <TextView
+            android:id="@+id/tvAmountFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$10.00"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCurrencyFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USD"
+            android:textSize="14sp"
+            android:textColor="#808080"
+            app:layout_constraintStart_toStartOf="@id/tvAmountFrom"
+            app:layout_constraintTop_toBottomOf="@id/tvAmountFrom" />
+
+        <!-- Flecha indicadora -->
+        <ImageView
+            android:id="@+id/ivArrow"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tvCurrencyFrom"
+            app:tint="#0049ff" />
+
+        <!-- Monto y divisa destino -->
+        <TextView
+            android:id="@+id/tvAmountTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="€9.20"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#0049ff"
+            app:layout_constraintEnd_toStartOf="@id/btnDelete"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/tvCurrencyTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EUR"
+            android:textSize="14sp"
+            android:textColor="#808080"
+            app:layout_constraintEnd_toEndOf="@id/tvAmountTo"
+            app:layout_constraintTop_toBottomOf="@id/tvAmountTo" />
+
+        <!-- Icono de eliminar para cada item -->
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_delete"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:contentDescription="Eliminar conversión"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tvCurrencyTo" />
+
+        <!-- Fecha y hora -->
+        <TextView
+            android:id="@+id/tvDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16/3/2025, 23:09:44"
+            android:textSize="12sp"
+            android:textColor="#AAAAAA"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCurrencyFrom" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

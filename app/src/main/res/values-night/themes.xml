@@ -3,6 +3,9 @@
     <style name="Base.Theme.ConvertKatsu" parent="Theme.Material3.Light.NoActionBar">
         <!-- Evitar que el modo oscuro afecte la app -->
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+
+        <!-- Cambiar color de la barra de estado -->
+        <item name="android:statusBarColor">@color/black</item>  <!-- Cambia a tu color deseado -->
     </style>
 
     <style name="Theme.ConvertKatsu" parent="Base.Theme.ConvertKatsu" />

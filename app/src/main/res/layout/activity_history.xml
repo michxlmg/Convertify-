@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".HistoryActivity">
+
+    <!-- Icono de flecha hacia atrás -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:src="@drawable/ic_arrow_left"
+        android:contentDescription="Volver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/titleHistory"
+        app:layout_constraintEnd_toStartOf="@id/titleHistory"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Título del historial -->
+    <TextView
+        android:id="@+id/titleHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="12dp"
+        android:text="Historial de Conversiones"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnBack" />
+
+    <!-- Icono de eliminar historial -->
+    <ImageButton
+        android:id="@+id/btnDeleteAll"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_delete"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="12dp"
+        android:contentDescription="Eliminar todo el historial"
+        app:layout_constraintTop_toTopOf="@id/titleHistory"
+        app:layout_constraintBottom_toBottomOf="@id/titleHistory"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp" />
+
+    <!-- RecyclerView para mostrar el historial -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewHistory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/titleHistory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_conversion_history"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
